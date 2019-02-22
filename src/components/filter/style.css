@@ -11,3 +11,8 @@
 .filter-wrapper > div {
   margin-top: 10px;
 }
+
+.filter-wrapper > div > span {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 10px;
+}

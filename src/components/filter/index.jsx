@@ -1,64 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
+import { RadioButton } from "../common/radioButton";
 import "./style.css";
 
-class Filter extends Component {
-  state = {};
-  render() {
-    return (
-      <div className="filter-wrapper">
-        <div>
-          32
-          <input
-            type="radio"
-            name="guide-length"
-            value="32"
-            disabled={this.props.disabled}
-            onClick={this.props.fetchTheData}
-          />
-        </div>
-        <div>
-          16
-          <input
-            type="radio"
-            name="guide-length"
-            value="16"
-            disabled={this.props.disabled}
-            onClick={this.props.fetchTheData}
-          />
-        </div>
-        <div>
-          10
-          <input
-            type="radio"
-            name="guide-length"
-            value="10"
-            disabled={this.props.disabled}
-            onClick={this.props.fetchTheData}
-          />
-        </div>
-        <div>
-          6
-          <input
-            type="radio"
-            name="guide-length"
-            value="6"
-            disabled={this.props.disabled}
-            onClick={this.props.fetchTheData}
-          />
-        </div>
-        <div>
-          3
-          <input
-            type="radio"
-            name="guide-length"
-            value="3"
-            disabled={this.props.disabled}
-            onClick={this.props.fetchTheData}
-          />
-        </div>
-      </div>
-    );
-  }
-}
+const Filter = ({ lengths, onChange, disabled }) => {
+  return (
+    <div className="filter-wrapper">
+      {lengths.map(len => (
+        <RadioButton
+          key={len}
+          text={len}
+          value={len}
+          onChange={onChange}
+          disabled={disabled}
+        />
+      ))}
+    </div>
+  );
+};
 
-export default Filter;
+export { Filter };

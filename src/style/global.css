@@ -2,3 +2,10 @@ body {
   padding: 25px;
   font-family: Ubuntu;
 }
+
+textarea,
+select,
+input,
+button {
+  outline: none;
+}

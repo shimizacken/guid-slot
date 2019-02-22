@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Filter from "../filter";
+import { Filter } from "../filter";
 import Content from "../content";
 import { guidLengthChanged } from "../../state/actions";
 import "./style.css";
@@ -15,7 +15,8 @@ class Panel extends Component {
     return (
       <div className="panel-wrapper">
         <Filter
-          fetchTheData={this.generateGuid}
+          lengths={this.props.lengths}
+          onChange={this.generateGuid}
           disabled={this.props.inProgress}
         />
         <Content />
@@ -25,7 +26,8 @@ class Panel extends Component {
 }
 
 const mapStateToProps = state => ({
-  inProgress: state.inProgress
+  inProgress: state.inProgress,
+  lengths: state.lengths
 });
 
 const mapDispatchToProps = dispatch => {

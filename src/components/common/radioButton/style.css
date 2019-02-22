@@ -1,0 +1,39 @@
+.radio-button-wrapper {
+  border: 1px solid #eeeeee;
+  padding: 10px;
+  min-width: 20px;
+  margin: 5px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 8px;
+}
+
+input.radio-button {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  border: 1px solid #37314f;
+}
+
+.radio-button-wrapper:hover {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+}
+
+.radio-button-wrapper:active {
+  background-color: #eeeeee;
+}
+
+.radio-button-wrapper.disabled {
+  background-color: #ffffff;
+  color: #aaaaaa;
+  cursor: progress;
+}
+
+input.radio-button:checked + .radio-button-wrapper {
+  background-color: #dddddd;
+  cursor: not-allowed;
+  opacity: 5;
+  position: block;
+}

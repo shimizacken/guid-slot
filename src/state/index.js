@@ -2,7 +2,9 @@ import { createStore, applyMiddleware } from "redux";
 import reducers from "./reducers";
 import middlewares from "./middlewares";
 
-const initialState = {};
+const initialState = {
+  lengths: [32, 16, 10, 6, 3]
+};
 
 const store = createStore(
   reducers,
