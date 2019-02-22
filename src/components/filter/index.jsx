@@ -12,6 +12,7 @@ class Filter extends Component {
             type="radio"
             name="guide-length"
             value="32"
+            disabled={this.props.disabled}
             onClick={this.props.fetchTheData}
           />
         </div>
@@ -21,6 +22,7 @@ class Filter extends Component {
             type="radio"
             name="guide-length"
             value="16"
+            disabled={this.props.disabled}
             onClick={this.props.fetchTheData}
           />
         </div>
@@ -30,6 +32,7 @@ class Filter extends Component {
             type="radio"
             name="guide-length"
             value="10"
+            disabled={this.props.disabled}
             onClick={this.props.fetchTheData}
           />
         </div>
@@ -39,6 +42,7 @@ class Filter extends Component {
             type="radio"
             name="guide-length"
             value="6"
+            disabled={this.props.disabled}
             onClick={this.props.fetchTheData}
           />
         </div>
@@ -48,6 +52,7 @@ class Filter extends Component {
             type="radio"
             name="guide-length"
             value="3"
+            disabled={this.props.disabled}
             onClick={this.props.fetchTheData}
           />
         </div>

@@ -1,15 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Loader } from "../loader";
 import "./style.css";
 
-const Content = ({ guid }) => (
+const Content = ({ guid, inProgress }) => (
   <div className="content-wrapper">
-    <input type="text" value={guid} />
+    {inProgress ? <Loader /> : <input type="text" value={guid} />}
   </div>
 );
 
 const mapStateToProps = state => ({
-  guid: state.guid
+  guid: state.guid,
+  inProgress: state.inProgress
 });
 
 export default connect(mapStateToProps)(Content);

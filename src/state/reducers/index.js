@@ -1,10 +1,15 @@
 import { combineReducers } from "redux";
-import { GENERATE_GUID, GUID_LENGTH_CHANGED } from "../constants";
+import {
+  GENERATE_GUID,
+  GUID_LENGTH_CHANGED,
+  GUID_GENERATION_STATUS
+} from "../constants";
 const uniqueString = require("unique-string");
 
 const initialState = {
   guid: uniqueString(),
-  guideLength: 16
+  guideLength: 16,
+  inProgress: false
 };
 
 const guid = (state = initialState, action) => {
@@ -19,6 +24,13 @@ const guid = (state = initialState, action) => {
     return {
       ...state,
       guideLength: action.guideLength
+    };
+  }
+
+  if (action.type === GUID_GENERATION_STATUS) {
+    return {
+      ...state,
+      inProgress: action.inProgress
     };
   }
 

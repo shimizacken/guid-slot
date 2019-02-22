@@ -2,32 +2,39 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Filter from "../filter";
 import Content from "../content";
-import { filterChanged } from "../../state/actions";
+import { guidLengthChanged } from "../../state/actions";
 import "./style.css";
 
 class Panel extends Component {
-  fetchTheData = e => {
-    this.props.filterChanged(parseInt(e.target.value));
+  generateGuid = e => {
+    this.props.guidLengthChanged(parseInt(e.target.value));
     e.persist();
   };
 
   render() {
     return (
       <div className="panel-wrapper">
-        <Filter fetchTheData={this.fetchTheData} />
+        <Filter
+          fetchTheData={this.generateGuid}
+          disabled={this.props.inProgress}
+        />
         <Content />
       </div>
     );
   }
 }
 
+const mapStateToProps = state => ({
+  inProgress: state.inProgress
+});
+
 const mapDispatchToProps = dispatch => {
   return {
-    filterChanged: guideLength => dispatch(filterChanged(guideLength))
+    guidLengthChanged: guideLength => dispatch(guidLengthChanged(guideLength))
   };
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Panel);

@@ -1,13 +1,22 @@
-import { GENERATE_GUID, GUID_LENGTH_CHANGED } from "../constants";
+import {
+  GENERATE_GUID,
+  GUID_LENGTH_CHANGED,
+  GUID_GENERATION_STATUS
+} from "../constants";
 
-const fetchColors = guid => ({
+const generateGuidAction = guid => ({
   type: GENERATE_GUID,
   guid: guid
 });
 
-const filterChanged = guideLength => ({
+const guidLengthChanged = guideLength => ({
   type: GUID_LENGTH_CHANGED,
   guideLength: guideLength
 });
 
-export { fetchColors, filterChanged };
+const guidGenerationStatus = inProgress => ({
+  type: GUID_GENERATION_STATUS,
+  inProgress: inProgress
+});
+
+export { generateGuidAction, guidLengthChanged, guidGenerationStatus };
