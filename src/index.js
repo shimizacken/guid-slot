@@ -5,11 +5,12 @@ import { store } from "./state";
 import Panel from "./components/panel";
 import { Header } from "./components/header";
 import "./style/global.css";
+import "./style/animations.css";
 
 function App() {
   return (
     <Provider store={store}>
-      <div>
+      <div className="main-wrapper">
         <Header />
         <Panel />
       </div>

@@ -1,7 +1,9 @@
 import {
   GUID_LENGTH_CHANGED,
   GUID_GENERATION_START,
-  GUID_GENERATION_END
+  GUID_GENERATION_END,
+  COPY_GUID,
+  GUID_COPIED
 } from "../constants";
 import { generateGuidAction, guidGenerationStatus } from "../actions";
 import { generateGuid } from "../../services/guidGen";
@@ -16,7 +18,8 @@ const filterMiddleware = ({ getState, dispatch }) => next => action => {
   const timeout = setTimeout(() => {
     dispatch(generateGuidAction(generateGuid(action.guideLength)));
     dispatch(guidGenerationStatus(false));
-  }, 1500);
+    dispatch({ type: COPY_GUID });
+  }, 1000);
 
   next(action);
 };

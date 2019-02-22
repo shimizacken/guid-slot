@@ -11,6 +11,7 @@
 
 input.radio-button {
   position: absolute;
+  left: -99999px;
   opacity: 0;
   cursor: pointer;
   border: 1px solid #37314f;
@@ -34,6 +35,4 @@ input.radio-button {
 input.radio-button:checked + .radio-button-wrapper {
   background-color: #dddddd;
   cursor: not-allowed;
-  opacity: 5;
-  position: block;
 }
