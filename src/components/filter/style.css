@@ -1,0 +1,13 @@
+.filter-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eeeeee;
+  padding: 15px;
+  width: 100px;
+}
+
+.filter-wrapper > div {
+  margin-top: 10px;
+}

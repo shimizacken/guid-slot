@@ -1,0 +1,11 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  text-align: left;
+}
+
+header h1 {
+  margin-left: 15px;
+}
